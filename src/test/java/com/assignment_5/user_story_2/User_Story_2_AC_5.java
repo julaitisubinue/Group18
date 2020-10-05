@@ -44,10 +44,5 @@ public class User_Story_2_AC_5 {
     }
 
 
-    @AfterMethod
-    public void afterMethod(){
-        driver.manage().window().maximize();
-        driver.close();
-    }
 
 }

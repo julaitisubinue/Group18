@@ -44,7 +44,7 @@ public class User_Story_3_AC_6 {
         WebElement startTime=driver.findElement(By.xpath("//input[@name='TIME_FROM_']"));
         startTime.click();
 
-        WebElement setBotton=driver.findElement(By.xpath("//input[@value='Set Time']"));
+        WebElement setBotton=driver.findElement(By.xpath("//div[@id='feed_cal_event_to_timecal_3Jcl_div']//input[@value='Set Time']"));
         setBotton.click();
 
         WebElement endDate=driver.findElement(By.id("feed-cal-event-tocal_3Jcl"));

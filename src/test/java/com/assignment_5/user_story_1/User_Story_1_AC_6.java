@@ -4,9 +4,11 @@ import com.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class User_Story_1_AC_6 {
@@ -35,13 +37,22 @@ public class User_Story_1_AC_6 {
         icon.click();
 
         WebElement user1=driver.findElement(By.xpath("//div[.='hr77@cybertekschool.com']"));
+
+        String expectResult=user1.getText();
+        System.out.println("expectResult = "+expectResult);
+
         user1.click();
 
-        WebElement icon2= driver.findElement(By.id("bx-b-mention-blogPostForm"));
-        icon2.click();
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']"));
+        driver.switchTo().frame(iframe);
+        String actuallyResult = driver.findElement(By.xpath("//span[@class='bxhtmled-metion']")).getText();
+        driver.switchTo().parentFrame();
 
-        WebElement user2=driver.findElement(By.xpath("//div[.='helpdesk27@cybertekschool.com']"));
-        user2.click();
+
+
+        Assert.assertEquals(expectResult,actuallyResult);
+
+
 
 
 
