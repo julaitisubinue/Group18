@@ -39,18 +39,20 @@ public class User_Story_1_Test_Suit {
         icon.click();
 
         WebElement user1=driver.findElement(By.xpath("//div[.='hr77@cybertekschool.com']"));
+
+        String expectResult=user1.getText();
+        System.out.println("expectResult = "+expectResult);
+
         user1.click();
 
-        WebElement icon2= driver.findElement(By.id("bx-b-mention-blogPostForm"));
-        icon2.click();
-
-        WebElement user2=driver.findElement(By.xpath("//div[.='helpdesk27@cybertekschool.com']"));
-        user2.click();
-
+        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']"));
+        driver.switchTo().frame(iframe);
+        String actuallyResult = driver.findElement(By.xpath("//span[@class='bxhtmled-metion']")).getText();
+        driver.switchTo().parentFrame();
 
 
 
-
+        Assert.assertEquals(expectResult,actuallyResult);
 
 
 
