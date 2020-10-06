@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -42,7 +43,7 @@ public class User_Story_3_AC_6 {
         WebElement selectStartDate=driver.findElement(By.xpath("//a[.='12']"));
         selectStartDate.click();
 
-        WebElement deleteHour = driver.findElement(By.xpath("//input[@title='Hours']"));
+        WebElement deleteHour = driver.findElement(By.id("feed_cal_event_from_timecal_3Jcl"));
         deleteHour.click();
         deleteHour.sendKeys(Keys.BACK_SPACE);
 
@@ -92,32 +93,13 @@ public class User_Story_3_AC_6 {
         WebElement day = driver.findElement(By.xpath("//div[@class='bx-calendar-layer']//div//a[5]"));
         day.click();
 
-        driver.findElement(By.id("feed_cal_event_to_timecal_3Jcl")).click();
-
-
-
-
-
-
-
-
-        WebElement setBotton=driver.findElement(By.xpath("//input[@value='Set Time']"));
-        setBotton.click();
-
-        WebElement endDate=driver.findElement(By.id("feed-cal-event-tocal_3Jcl"));
-        endDate.click();
-
-        WebElement selectEndDate=driver.findElement(By.xpath("//a[.='16']"));
-        selectEndDate.click();
-
-        WebElement endTime=driver.findElement(By.xpath("//input[@name='TIME_TO_']"));
-        endTime.click();
-
-        WebElement setBotton2= driver.findElement(By.xpath("//input[@value='Set Time']"));
-        setBotton2.click();
-
-        WebElement timeZone= driver.findElement(By.id("feed-cal-tz-switchcal_3Jcl"));
+        WebElement timeZone= driver.findElement(By.xpath("//span[@class='feed-ev-tz-open']"));
         timeZone.click();
+
+
+
+
+
 
 
 

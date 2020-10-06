@@ -92,6 +92,7 @@ public class User_Story_2_AC_9 {
         WebElement day = driver.findElement(By.xpath("//div[@class='bx-calendar-layer']//div//a[5]"));
         day.click();
 
+
         driver.findElement(By.id("feed_cal_event_to_timecal_3Jcl")).click();
 
 /*
