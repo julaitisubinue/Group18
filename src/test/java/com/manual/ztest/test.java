@@ -1,4 +1,4 @@
-package com.ztest;
+package com.manual.ztest;
 
 import java.util.Arrays;
 

@@ -1,6 +1,6 @@
-package com.assignment_5.user_story_3;
+package com.manual.assignment_5.user_story_3;
 
-import com.assignment_5.Utilities.WebDriverFactory;
+import com.manual.assignment_5.Utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

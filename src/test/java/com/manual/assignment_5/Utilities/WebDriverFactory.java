@@ -1,4 +1,4 @@
-package com.assignment_5.Utilities;
+package com.manual.assignment_5.Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

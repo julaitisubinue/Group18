@@ -1,6 +1,6 @@
-package com.assignment_5.user_story_2;
+package com.manual.assignment_5.user_story_2;
 
-import com.assignment_5.Utilities.WebDriverFactory;
+import com.manual.assignment_5.Utilities.WebDriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;

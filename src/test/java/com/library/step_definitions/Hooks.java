@@ -1,7 +1,8 @@
-package com.vytrack.step_definitions;
+package com.library.step_definitions;
 
-import com.vytrack.utils.BrowserUtilities;
-import com.vytrack.utils.Driver;
+
+import com.library.utils.BrowserUtilities;
+import com.library.utils.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -18,21 +19,9 @@ public class Hooks {
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-
-    @Before(value = "@db", order = 0)
-    public void dbSetup(){
-        System.out.println("::: Contenting to database ::::");
-    }
-
-    @After(value = "@db",order = 1)
-    public void dbTearDown(){
-        System.out.println("::: Disconnecting from the database :::");
-    }
-
     @After
     public void tearDown(){
-        BrowserUtilities.wait(3);
-       Driver.closeDriver();
+        Driver.closeDriver();
         System.out.println("(*___*)End of test execution(*___*)");
     }
 
