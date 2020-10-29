@@ -24,19 +24,6 @@ public class BrowserUtilities {
         }
     }
 
-    public static void waitListOfElements(By by){
-        int count =0;
-        while (count++ <=10){
-            try {
-                Driver.getDriver().findElement(by);
-                break;
-            }catch (WebDriverException e){
-               wait(1);
-            }
-        }
-
-    }
-
     public static void waitClickOnElement(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }

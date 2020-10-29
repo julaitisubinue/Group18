@@ -46,7 +46,6 @@ public class BooksManage_stepDefinitions {
     }
 
     ////////////////////////AC2/////////////////////
-
     @Given("user select view {int} records per page")
     public void user_select_view_records_per_page(Integer int1) {
         booksManagePage.select_recordsPerPage(int1);
@@ -67,6 +66,5 @@ public class BooksManage_stepDefinitions {
     public void the_form_is_displayed(String formName) {
       Assert.assertTrue(booksManagePage.verify_fromDisplay(formName));
     }
-
 
 }
