@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = "@AC2"
+        tags = "@AC3"
 )
 public class CucumberRunner {
 }

@@ -42,6 +42,16 @@ public class BooksManagePage {
     @FindBy(xpath = "//tbody//tr")
     private List<WebElement>recodeList;
 
+    @FindBy(xpath = "//a[.=' Add Book']")
+    private WebElement addBookButton;
+
+    @FindBy(css = "div.modal-header")
+    public WebElement addBookForm;
+
+    public void click_addBook(){
+        BrowserUtilities.waitClickOnElement(addBookButton);
+    }
+
     public void clickBooksTab(){
         BrowserUtilities.waitClickOnElement(booksTab);
     }
@@ -94,5 +104,11 @@ public class BooksManagePage {
             arrayList.add(each.getText());
         }
         return arrayList;
+    }
+
+    public boolean addBookForm(){
+
+       BrowserUtilities.wait(1);
+        return addBookForm.isDisplayed();
     }
 }

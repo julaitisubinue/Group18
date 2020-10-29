@@ -17,6 +17,15 @@ Feature:  As an authorized user, I should able to access Books  page and and man
     And  user select view 5 records per page
     Then only 5 records are displayed on page
 
+
+  @AC3
+  Scenario: AC3: User should able to Add Book
+    #Given I am at the Books page
+    Given I am at the Books Management page
+    When user click "Add Book" button
+    Then The "Add Book" form is displayed
+
+
   @AC5
   Scenario: User should be change number of displayed records on the page
     Given I am at the Books Management page

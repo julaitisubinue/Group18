@@ -57,5 +57,16 @@ public class BooksManage_stepDefinitions {
         Assert.assertEquals(int1,booksManagePage.verify_recordOfPage().size());
     }
 
+    //////////////////////AC3//////////////////////////////////////
+    @When("user click \"Add Book\" button")
+    public void userClickButton() {
+        booksManagePage.click_addBook();
+    }
+
+    @Then("The \"Add Book\" form is displayed")
+    public void the_form_is_displayed() {
+      Assert.assertTrue(booksManagePage.addBookForm());
+    }
+
 
 }
