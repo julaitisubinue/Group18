@@ -3,6 +3,7 @@ package com.library.pages;
 import com.library.utils.BrowserUtilities;
 import com.library.utils.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,6 +35,12 @@ public class BooksManagePage {
 
     @FindBy(xpath = "//tbody//td[5]")
     private List<WebElement> categoryList;
+
+    @FindBy(name = "tbl_books_length")
+    private WebElement recordsPerPageSelector;
+
+    @FindBy(xpath = "//tbody//tr")
+    private List<WebElement>recodeList;
 
     public void clickBooksTab(){
         BrowserUtilities.waitClickOnElement(booksTab);
@@ -75,5 +82,17 @@ public class BooksManagePage {
         return arrayList;
     }
 
+    public void select_recordsPerPage(int num){
+        Select select = new Select(recordsPerPageSelector);
+        select.selectByVisibleText((num+""));
+    }
 
+    public ArrayList<String> verify_recordOfPage(){
+        BrowserUtilities.wait(1);
+        ArrayList<String>arrayList = new ArrayList<>();
+        for (WebElement each :recodeList){
+            arrayList.add(each.getText());
+        }
+        return arrayList;
+    }
 }
