@@ -45,8 +45,16 @@ public class BooksManagePage {
     @FindBy(xpath = "//a[.=' Add Book']")
     private WebElement addBookButton;
 
-    @FindBy(css = "div.modal-header")
+    @FindBy(xpath = "//div[@class='modal-header']/h5[.='Add Book']")
     public WebElement addBookForm;
+
+    @FindBy(xpath = "//div[@class='modal-header']")
+    private WebElement formHeader;
+
+    public void click_blueButtons(String blueButtonsName){
+        WebElement element = Driver.getDriver().findElement(By.xpath("//a[contains(text(),' "+blueButtonsName+"')]"));
+        BrowserUtilities.waitClickOnElement(element);
+    }
 
     public void click_addBook(){
         BrowserUtilities.waitClickOnElement(addBookButton);
@@ -106,9 +114,15 @@ public class BooksManagePage {
         return arrayList;
     }
 
+    public boolean verify_fromDisplay(String formName){
+        wait.until(ExpectedConditions.visibilityOf(formHeader));
+        WebElement element = Driver.getDriver().findElement(By.xpath("//div[@class='modal-header']/h5[.='"+formName+"']"));
+        return element.isDisplayed();
+    }
+
     public boolean addBookForm(){
 
-       BrowserUtilities.wait(1);
+       wait.until(ExpectedConditions.visibilityOf(formHeader));
         return addBookForm.isDisplayed();
     }
 }

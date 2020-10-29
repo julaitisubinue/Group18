@@ -58,14 +58,14 @@ public class BooksManage_stepDefinitions {
     }
 
     //////////////////////AC3//////////////////////////////////////
-    @When("user click \"Add Book\" button")
-    public void userClickButton() {
-        booksManagePage.click_addBook();
+    @When("user click {string} button")
+    public void userClickButton(String button) {
+        booksManagePage.click_blueButtons(button);
     }
 
-    @Then("The \"Add Book\" form is displayed")
-    public void the_form_is_displayed() {
-      Assert.assertTrue(booksManagePage.addBookForm());
+    @Then("The {string} form is displayed")
+    public void the_form_is_displayed(String formName) {
+      Assert.assertTrue(booksManagePage.verify_fromDisplay(formName));
     }
 
 
