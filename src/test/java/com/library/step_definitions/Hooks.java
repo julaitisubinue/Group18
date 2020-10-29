@@ -1,7 +1,5 @@
 package com.library.step_definitions;
 
-
-import com.library.utils.BrowserUtilities;
 import com.library.utils.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

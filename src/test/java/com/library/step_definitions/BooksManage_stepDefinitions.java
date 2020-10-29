@@ -31,4 +31,18 @@ public class BooksManage_stepDefinitions {
         Assert.assertTrue(booksManagePage.page5Verify());
     }
 
+////////////////////////AC1///////////////////////////////
+    @Then("user select {string} from Book Category")
+    public void user_select_from_book_category(String string) {
+        booksManagePage.select_bookCategories(string);
+    }
+
+    @Then("The table should display only {string} books")
+    public void the_table_should_display_only_books(String string) {
+        for (String each:booksManagePage.verify_categoryList()) {
+            Assert.assertEquals(string, each);
+        }
+
+    }
+
 }

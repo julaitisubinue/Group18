@@ -1,10 +1,7 @@
 package com.library.utils;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,6 +22,19 @@ public class BrowserUtilities {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void waitListOfElements(By by){
+        int count =0;
+        while (count++ <=10){
+            try {
+                Driver.getDriver().findElement(by);
+                break;
+            }catch (WebDriverException e){
+               wait(1);
+            }
+        }
+
     }
 
     public static void waitClickOnElement(WebElement element){
